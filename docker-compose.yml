@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    container_name: anivault-db
+    environment:
+      POSTGRES_DB: anivault
+      POSTGRES_USER: anivault
+      POSTGRES_PASSWORD: anivault
+    ports:
+      - "5432:5432"
+    volumes:
+      - anivault-data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  anivault-data:
