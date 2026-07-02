@@ -50,6 +50,7 @@ public class AnimeEntity {
     private LocalDate completedDate;
     private LocalDateTime addedAt;
     @ElementCollection
+    @CollectionTable(name = "anime_entity_tags", joinColumns = @JoinColumn(name = "anime_id"))
     private List<String> tags;
 
     @ManyToOne(fetch = FetchType.LAZY)
